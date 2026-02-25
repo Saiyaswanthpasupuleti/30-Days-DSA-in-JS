@@ -1,0 +1,1 @@
+Recursion is a technique which is used to call the same function until it get it's base condition satisfied

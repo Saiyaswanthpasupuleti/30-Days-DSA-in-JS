@@ -1,0 +1,1 @@
+Searching Algorithm's : it is a technique to search the data from the existing data 

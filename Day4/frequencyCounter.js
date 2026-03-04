@@ -1,15 +1,14 @@
-function same(arr1, arr2) {
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
+//  check the value in first array and it's sqaured includes in second array if yes return true else return false
 
-  for (let i = 0; i < arr1.length; i++) {
-    var multplyed = arr2.indexOf(arr1[i] ** 2);
-    if (multplyed === -1) {
+function frequencyChecker(arr1, arr2) {
+  if (arr1.length !== arr2.length) return false;
+
+  for (let i of arr1) {
+    var squared = i ** 2;
+    if (!arr2.includes(squared)) {
       return false;
     }
-    arr2.splice(multplyed, 1);
   }
   return true;
 }
-same([1, 2, 3, 4], [1, 4, 9, 16]);
+console.log(frequencyChecker([1, 2, 3]));

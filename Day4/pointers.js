@@ -15,5 +15,23 @@ function twoPointers(arr) {
     }
   }
 }
-console.log(twoPointers([-3, -2, 1, 0, 1, 2, 3, 4]));
+// console.log(twoPointers([-3, -2, 1, 0, 1, 2, 3, 4]));
 //                        f                         l
+
+// function unqiueNumbers(arr) {
+//   var a = new Set(arr);
+//   return a;
+// }
+// console.log(unqiueNumbers([1, 1, 1, 1, 1, 1, 1, 2]));
+
+function unique(arr) {
+  var i = 0;
+  for (let j = 1; j < arr.length; j++) {
+    if (arr[i] != arr[j]) {
+      i++;
+      arr[i] = arr[j];
+    }
+  }
+  return i + 1;
+}
+console.log(unique([1, 1, 1, 1, 1, 1, 1, 2]));

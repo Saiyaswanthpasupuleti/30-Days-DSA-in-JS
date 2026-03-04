@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/second-largest-digit-in-a-string/
 var secondHighest = function (s) {
   var largest = [];
   function validate(char) {
@@ -19,3 +20,20 @@ var secondHighest = function (s) {
   }
 };
 console.log(secondHighest("abc1111"));
+
+//  https://leetcode.com/problems/palindrome-number/
+
+var isPalindrome = function (y) {
+  var x = y.toString();
+  var first = 0;
+  var last = x.length - 1;
+  for (let i = 0; i <= x.length - 1; i++) {
+    if (x[first] != x[last]) {
+      return false;
+    }
+    first++;
+    last--;
+  }
+  return true;
+};
+console.log(isPalindrome(-121));

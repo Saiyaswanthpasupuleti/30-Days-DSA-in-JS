@@ -19,7 +19,7 @@ var secondHighest = function (s) {
     return Number(largest[1]);
   }
 };
-console.log(secondHighest("abc1111"));
+// console.log(secondHighest("abc1111"));
 
 //  https://leetcode.com/problems/palindrome-number/
 
@@ -36,4 +36,42 @@ var isPalindrome = function (y) {
   }
   return true;
 };
-console.log(isPalindrome(-121));
+// console.log(isPalindrome(-121));
+
+// Two Pointer's
+// Maximum Points that you can obtain from the cards
+
+function addCards(arr, num) {
+  var maxSum = 0;
+  var tempSum = 0;
+  for (let i = 0; i < num; i++) {
+    tempSum += arr[i];
+  }
+  maxSum = tempSum;
+
+  for (let j = num; j < arr.length; j++) {
+    tempSum = tempSum - arr[num - j] + arr[j];
+    return Math.max(tempSum, maxSum);
+  }
+}
+console.log(addCards([1, 4, 2, 4, 2, 5, 3, 2], 4));
+
+function maxSum(arr, num) {
+  var leftSum = 0;
+  var rightSum = 0;
+  var maxSum = 0;
+  for (let i = 0; i < num; i++) {
+    leftSum += arr[i];
+  }
+  maxSum = leftSum;
+  var rightIndex = arr.length - 1;
+
+  for (var i = num - 1; i >= 0; i--) {
+    leftSum = leftSum - arr[i];
+    rightSum = rightSum + arr[rightIndex];
+    rightIndex--;
+    maxSum = Math.max(maxSum, leftSum + rightSum);
+  }
+  return maxSum;
+}
+console.log(maxSum([1, 2, 3, 4, 5, 6, 1], 3));

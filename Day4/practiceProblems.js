@@ -54,7 +54,7 @@ function addCards(arr, num) {
     return Math.max(tempSum, maxSum);
   }
 }
-console.log(addCards([1, 4, 2, 4, 2, 5, 3, 2], 4));
+// console.log(addCards([1, 4, 2, 4, 2, 5, 3, 2], 4));
 
 function maxSum(arr, num) {
   var leftSum = 0;
@@ -74,4 +74,26 @@ function maxSum(arr, num) {
   }
   return maxSum;
 }
-console.log(maxSum([1, 2, 3, 4, 5, 6, 1], 3));
+// console.log(maxSum([1, 2, 3, 4, 5, 6, 1], 3));
+function longestSubstring(str) {
+  var set = new Set();
+  var left = 0;
+  var maxLenght = 0;
+
+  for (let i = 0; i < str.length; i++) {
+    while (set.has(str[i])) {
+      set.delete(str[left]);
+      left++;
+    }
+
+    set.add(str[i]);
+    maxLenght = Math.max(maxLenght, i - left + 1);
+  }
+
+  return maxLenght;
+}
+
+console.log(longestSubstring("abcabcbb"));
+
+function check(arr) {}
+console.log(check([1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1]));

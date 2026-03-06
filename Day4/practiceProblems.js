@@ -93,7 +93,13 @@ function longestSubstring(str) {
   return maxLenght;
 }
 
-console.log(longestSubstring("abcabcbb"));
+// console.log(longestSubstring("abcabcbb"));
 
-function check(arr) {}
+function check(arr) {
+  for (let i = 0; i <= arr.length - 1; i++) {
+    for (let j = i; j < arr.length; j++) {
+      console.log(arr[j]);
+    }
+  }
+}
 console.log(check([1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1]));
